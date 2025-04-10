@@ -19,7 +19,6 @@ struct Global {
     float wave_offset; 
     float ocean_offset; 
     float sun = 40; 
-    float brightness; 
     float sunSpeed = 0.5f; 
     float ocean_vertical_offset;
     float wave_vertical_offset;
@@ -148,9 +147,9 @@ void init_xwindows(int w, int h) {
 void render() {
     GC gc = g.gc;
 
-   // move the sun down the screen 
+   // Animate the sun moving
 
-   // if the sun has goes below 2/3 reset it
+   // if the sun goes below 2/3 reset it
 
     draw_sky();
     draw_sun();
@@ -172,21 +171,13 @@ void draw_ocean() {
     XFillRectangle(g.dpy, g.backBuffer, g.gc,
                    0, g.yres / 2, g.xres, g.yres / 2);
 
-    
-    // draw the wave
-    // set the color for the wave
-    // loop through each x pixel 
-    // use a sine function for the wave 
-    // draw a wave line
-    //XDrawLine(g.dpy, g.backBuffer, g.gc, i, g.yres / 2 + waveHeight, i, g.yres / 2 + waveHeight + 10);
-
-    // make the wave and ocean move 
+    // Animate the ocean moving
 }
 
 void draw_sky() {
     float skyHeight = g.yres * 0.6f;
 
-    // set the brightness 
+    // calculate the brightness
 
     for (int i = 0; i < skyHeight; i++) {
         float t = static_cast<float>(i) / skyHeight;
@@ -209,7 +200,7 @@ void draw_sky() {
 
 void draw_sun() {
 
-    // need to do on your own :)
+    // need to start on your own :)
 
 }
 
